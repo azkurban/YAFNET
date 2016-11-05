@@ -117,7 +117,7 @@ namespace YAF.Controls
 		/// <summary>
 		/// Bind Data
 		/// </summary>
-		private void BindData()
+		protected virtual void BindData()
 		{
 			DataSet ds = this.Get<YafDbBroker>().BoardLayout(
 					this.PageContext.PageBoardID, this.PageContext.PageUserID, this.PageContext.PageCategoryID, null);

@@ -370,7 +370,13 @@ namespace YAF.Core.Helpers
                 dt.Columns.Add("FileName", typeof(string));
                 dt.Columns.Add("IsMobile", typeof(bool));
 
-                var dir = new DirectoryInfo(YafContext.Current.Get<HttpRequestBase>().MapPath("{0}{1}".FormatWith(YafForumInfo.ForumServerFileRoot, YafBoardFolders.Current.Themes)));
+                var themesPath = YafBoardFolders.Current.Themes;
+                var forumFileRoot = YafForumInfo.ForumServerFileRoot;
+                var path = "{0}{1}".FormatWith(forumFileRoot, themesPath);
+                var httpRequestBase = YafContext.Current.Get<HttpRequestBase>();
+                var dirPath = httpRequestBase.MapPath(path);
+
+                var dir = new DirectoryInfo(dirPath);
 
                 foreach (var file in dir.GetFiles("*.xml"))
                 {

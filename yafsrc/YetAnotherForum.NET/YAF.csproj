@@ -117,6 +117,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.0.0\lib\net451\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="CookComputing.XmlRpcV2, Version=3.0.0.0, Culture=neutral, PublicKeyToken=a7d6e17aa302004d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\xmlrpcnet.3.0.0.266\lib\net20\CookComputing.XmlRpcV2.dll</HintPath>
@@ -130,9 +134,34 @@
     <Reference Include="nStuff.UpdateControls">
       <HintPath>..\packages\nStuff.UpdateControls.1.2.0.0\lib\net35\nStuff.UpdateControls.dll</HintPath>
     </Reference>
+    <Reference Include="Omu.ValueInjecter, Version=2.3.3.0, Culture=neutral, PublicKeyToken=c7694541b0ac80e4, processorArchitecture=MSIL">
+      <HintPath>..\packages\valueinjecter.2.3.3\lib\net35\Omu.ValueInjecter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Common.Signed.4.0.62\lib\net40\ServiceStack.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Interfaces.4.0.62\lib\portable-wp80+sl5+net40+win8+wpa81+monotouch+monoandroid+xamarin.ios10\ServiceStack.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.OrmLite.Signed.4.0.62\lib\net45\ServiceStack.OrmLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite.SqlServer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.OrmLite.SqlServer.Signed.4.0.62\lib\net45\ServiceStack.OrmLite.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Text.Signed.4.0.62\lib\net40\ServiceStack.Text.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data">
       <Name>System.Data</Name>
@@ -223,6 +252,13 @@
     </Compile>
     <Compile Include="controls\DisplayConnect.ascx.designer.cs">
       <DependentUpon>DisplayConnect.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ForumCategoryListMenu.ascx.cs">
+      <DependentUpon>ForumCategoryListMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\ForumCategoryListMenu.ascx.designer.cs">
+      <DependentUpon>ForumCategoryListMenu.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\ImageGallery.ascx.cs">
       <DependentUpon>ImageGallery.ascx</DependentUpon>
@@ -383,6 +419,10 @@
     </Compile>
     <Compile Include="pages\admin\accessmasks.ascx.designer.cs">
       <DependentUpon>accessmasks.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\admin\admin.ascx.cs">
+      <DependentUpon>admin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pages\admin\admin.ascx.designer.cs">
       <DependentUpon>admin.ascx</DependentUpon>
@@ -1047,6 +1087,7 @@
     <Content Include="controls\BuddyList.ascx" />
     <Content Include="controls\DialogBox.ascx" />
     <Content Include="controls\DisplayConnect.ascx" />
+    <Content Include="controls\ForumCategoryListMenu.ascx" />
     <Content Include="controls\ImageGallery.ascx" />
     <Content Include="controls\PollChoiceList.ascx" />
     <Content Include="controls\DisplayAd.ascx" />
@@ -1154,6 +1195,7 @@
     <Content Include="languages\install\english.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="pages\admin\admin.ascx" />
     <Content Include="pages\admin\bannedemail.ascx" />
     <Content Include="pages\admin\bannedemail_edit.ascx" />
     <Content Include="pages\admin\bannedemail_import.ascx" />
@@ -1235,7 +1277,6 @@
     <Content Include="languages\vietnam.xml" />
     <Content Include="pages\activeusers.ascx" />
     <Content Include="pages\admin\accessmasks.ascx" />
-    <Content Include="pages\admin\admin.ascx" />
     <Content Include="pages\admin\attachments.ascx" />
     <Content Include="pages\admin\bannedip.ascx" />
     <Content Include="pages\admin\bannedip_import.ascx" />
@@ -2372,10 +2413,6 @@
       <DependentUpon>accessmasks.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pages\admin\admin.ascx.cs">
-      <DependentUpon>admin.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="pages\admin\attachments.ascx.cs">
       <DependentUpon>attachments.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3488,6 +3525,9 @@
     <Content Include="Scripts\ckeditor\CHANGES.md" />
     <Content Include="Scripts\forum\yaf.MessageHistory.js" />
     <Content Include="Scripts\forum\yaf.Attachments.js" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Scripts\jquery-3.1.0.intellisense.js">
       <DependentUpon>jquery-3.1.0.js</DependentUpon>
     </None>
@@ -4573,7 +4613,7 @@
     <Content Include="UrlRewriter.config" />
     <None Include="Web References\RegisterV2\RegisterV2.wsdl" />
     <Content Include="v1.9.1.upgrade.web.config" />
-    <Content Include="web.config">
+    <Content Include="sp-vsem.web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
@@ -4591,12 +4631,16 @@
       <Name>YAF.Classes.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\YAF.Controls\YAF.Controls.csproj">
-      <Project>{C72A5FC8-4B1C-4A24-A306-FB550729DBF0}</Project>
+      <Project>{c72a5fc8-4b1c-4a24-a306-fb550729dbf0}</Project>
       <Name>YAF.Controls</Name>
     </ProjectReference>
     <ProjectReference Include="..\YAF.Core\YAF.Core.csproj">
       <Project>{BCEFE9BE-7417-47FB-A0E8-75E0201E88E8}</Project>
       <Name>YAF.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YAF.Data.MsSql\YAF.Data.MsSql.csproj">
+      <Project>{900b3fcf-bd78-4718-a34d-2662576565c8}</Project>
+      <Name>YAF.Data.MsSql</Name>
     </ProjectReference>
     <ProjectReference Include="..\YAF.Providers\YAF.Providers.csproj">
       <Project>{95A44CD9-4399-4DB9-823F-1A264083A390}</Project>
