@@ -108,3 +108,9 @@ Backup*/
 UpgradeLog*.XML
 yafsrc/.vs/config/applicationhost.config
 yafsrc/YetAnotherForum.NET/themes/Yafmobile/Thumbs.db
+/yafsrc/YetAnotherForum.NET/web.config
+/yafsrc/YetAnotherForum.NET/sp-vsem.web.config
+*.zip
+*.7z
+yafsrc/YetAnotherForum.NET/db.config
+yafsrc/YetAnotherForum.NET/app.config
