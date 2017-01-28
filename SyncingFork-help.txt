@@ -1,0 +1,21 @@
+Azamat@SunKitten MINGW64 /
+$ cd D/Proj/YAFNet/YAFNET
+
+Azamat@SunKitten MINGW64 /D/Proj/YAFNet/YAFNET (master)
+$ git fetch upstream
+
+Azamat@SunKitten MINGW64 /D/Proj/YAFNet/YAFNET (master)
+$ git checkout master
+Already on 'master'
+Your branch is up-to-date with 'origin/master'.
+
+Azamat@SunKitten MINGW64 /D/Proj/YAFNet/YAFNET (master)
+$ git merge upstream/master
+Merge made by the 'recursive' strategy.
+ .../YAF.Classes/YAF.Classes.Data/mssql/LegacyDb.cs | 164 +++++++++++----------
+ yafsrc/YAF.Core/Context/YafContext.cs              |  26 ++--
+ 2 files changed, 94 insertions(+), 96 deletions(-)
+
+Azamat@SunKitten MINGW64 /D/Proj/YAFNet/YAFNET (master)
+$
+
